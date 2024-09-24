@@ -1,0 +1,47 @@
+# MultiConvert.py
+# 陈逸洋+229050111
+
+def convert_temperature(temp_str):
+    if temp_str[-1].upper() == 'C':
+        celsius = float(temp_str[:-1])
+        fahrenheit = (celsius * 9 / 5) + 32
+        return f"转换后的温度是{fahrenheit:.2f}F"
+    elif temp_str[-1].upper() == 'F':
+        fahrenheit = float(temp_str[:-1])
+        celsius = (fahrenheit - 32) * 5 / 9
+        return f"转换后的温度是{celsius:.2f}C"
+    else:
+        return "输入格式错误"
+
+
+def convert_length(length_str):
+    if length_str[-1].upper() == 'M':
+        meters = float(length_str[:-1])
+        feet = meters * 0.3048
+        return f"转换后的长度是{feet:.2f}Y"
+    elif length_str[-1].upper() == 'Y':
+        feet = float(length_str[:-1])
+        meters = feet / 0.3048
+        return f"转换后的长度是{meters:.2f}M"
+    else:
+        return "输入格式错误"
+
+
+def main():
+    print("欢迎使用多功能转换器")
+    while True:
+        user_input = input("请输入带符号的温度或长度值(C,F,M,Y)（输入Q退出）：")
+        if user_input[-1].upper() in ['C', 'F', 'M','Y','Q']:
+            if user_input.upper() == 'Q':  # 如果用户输入Q或q则退出程序
+                print("程序结束")
+                break
+            elif user_input[-1].upper() in ['C', 'F']:
+                print(convert_temperature(user_input))
+            elif user_input[-1].upper() in['M','Y']:
+                print(convert_length(user_input))
+        else:
+            print("输入格式错误")
+
+
+if __name__ == "__main__":
+    main()
