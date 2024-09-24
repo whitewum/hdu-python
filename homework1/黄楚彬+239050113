@@ -1,0 +1,28 @@
+
+def celsius_to_fahrenheit(celsius):
+    """将摄氏度转换为华氏度"""
+    return (celsius * 9/5) + 32
+
+def chi_to_feet(chi):
+    """将尺（chi）转换为英尺（feet），1尺约等于3.28084英尺"""
+    return chi * 3.28084
+
+def main():
+    # 摄氏度转华氏度示例
+
+    operation = input("请输入要进行的操作（1:摄氏度转华氏度/2:尺转英尺）：")
+
+
+
+    if operation == "1":
+        celsius = float(input("请输入摄氏温度: "))
+        print(f"{celsius}°C 转换为华氏温度是 {celsius_to_fahrenheit(celsius)}°F")
+    elif operation == "2":
+        chi = float(input("请输入尺数: "))
+        feet = chi_to_feet(chi)
+        print(f"{chi}尺 转换为英尺是 {chi_to_feet(chi)}英尺")
+    else:
+        print("输入错误")
+
+if __name__ == "__main__":
+    main()
